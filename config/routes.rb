@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :posts do
     post :enqueue_archive_all, on: :collection
   end
+
+  mount MissionControl::Jobs::Engine, at: "/jobs"
 end
