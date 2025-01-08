@@ -57,6 +57,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def enqueue_archive_all
+    ArchiveAllPostsJob.perform_later
+    redirect_to posts_path, notice: "Archive job for all posts has been enqueued."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

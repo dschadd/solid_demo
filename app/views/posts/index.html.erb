@@ -4,13 +4,15 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <% cache post do %>
-      <%= render post %>
-      <p>
-        <%= link_to "Show this post", post %>
-      </p>
-    <% end %>
+    <%= render post, cached: true %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
   <% end %>
 </div>
+
+<p>
+  <%= button_to "Archive all posts", enqueue_archive_all_posts_path, method: :post %>
+</p>
 
 <%= link_to "New post", new_post_path %>

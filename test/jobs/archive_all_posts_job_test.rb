@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ImportJobTest < ActiveJob::TestCase
+class ArchiveAllPostsJobTest < ActiveJob::TestCase
   # test "the truth" do
   #   assert true
   # end
